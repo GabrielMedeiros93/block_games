@@ -1,0 +1,19 @@
+#ifndef GAMEGRAPHICS_H
+#define GAMEGRAPHICS_H
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#define CELL_LENGTH 20
+#include <gridGraphics.h>
+
+
+class gameGraphics : public gridGraphics
+{
+    public:
+        gameGraphics():gridGraphics(Mat &image);
+        virtual ~gameGraphics();
+    protected:
+    private:
+};
+
+#endif // GAMEGRAPHICS_H

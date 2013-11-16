@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1384601624 source:/home/rationalash/Documents/OpenCV/block_games/main.cpp
+	<iostream>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	"gameGraphics.h"
+	"player.h"
+
+1384263125 source:/home/rationalash/Documents/OpenCV/block_games/src/gridGraphics.cpp
+	"gridGraphics.h"
+	"math.h"
+
+1384263125 /home/rationalash/Documents/OpenCV/block_games/include/gridGraphics.h
+	<iostream>
+	<opencv2/core/core.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+
+1384602661 source:/home/rationalash/Documents/OpenCV/block_games/src/player.cpp
+	"player.h"
+
+1384602661 /home/rationalash/Documents/OpenCV/block_games/include/player.h
+	<iostream>
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<string.h>
+
+1384601603 source:/home/rationalash/Documents/OpenCV/block_games/src/gameGraphics.cpp
+	"gameGraphics.h"
+
+1384601587 /home/rationalash/Documents/OpenCV/block_games/include/gameGraphics.h
+	<opencv2/core/core.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<gridGraphics.h>
+	"player.h"
+
