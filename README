@@ -1,0 +1,9 @@
+An opencv project I created to get a hang of OpenCV and abstract data types.
+I'm just fooling around with classes and objects.
+
+At the moment it's good enough to do simple 2D graphics on a grid.
+And I can use my keyboard to move around objects in this grid. If you're curious, compile
+and try pressing W,A,S,D ;)
+
+Right now what this library can do is limited. I'll update this README if there is any
+significant progress
