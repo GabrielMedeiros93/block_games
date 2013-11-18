@@ -17,6 +17,7 @@ class gameGraphics : public gridGraphics
         ///Draw function in regular x-y coordinate system. The fillCell function uses
         ///Array indexing which is inconvenient. The cartesian system is easier to work with
         void drawPoint(int R, int G, int B, cv::Point point);
+        cv::Point toDeCartes(cv::Point gridPoint);
 
         ///Draw an object in the game frame
         void drawObject(int **array);

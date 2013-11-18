@@ -6,6 +6,12 @@ using namespace cv;
     //ctor
 //}
 
+Point gameGraphics::toDeCartes(Point gridPoint)
+{
+    gridPoint.y = getRows() - gridPoint.y + 1;
+    return gridPoint;
+}
+
 void gameGraphics::drawPoint(int R, int G, int B, Point point)
 {
     if((point.x>0) && (point.y>0)

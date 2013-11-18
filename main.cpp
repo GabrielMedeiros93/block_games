@@ -12,6 +12,8 @@ using namespace std;
 int sim_start=0;
 
 void mouseEventInGame(int event, int x, int y, int flags, void *param);
+player player1(3, 1,"Player");
+//player friendlyBullet()
 
 int main()
 {
@@ -21,7 +23,7 @@ int main()
     Mat frame(900, 1600, CV_8UC3, Scalar(0)); ///The current frame of the animation
     Mat controls(500,500,CV_8UC3, Scalar(0)); ///The controls
     namedWindow("GameWindow"); ///Window where the gaming action happens!!
-    player player1(3, 0,"Player");
+    //player player1(3, 1,"Player");
     char keypress;
 
     gameGraphics gameFrame(frame, CELL_SIZE); ///Initialize grid graphics with the frame
@@ -48,10 +50,10 @@ int main()
 
         if(keypress==27){break; cout<<"Key pressed: "<<keypress<<endl;}
         //if(keypress=='s') {sim_start ^= 1; cout<<"Key pressed: "<<keypress<<endl;}
-        if(keypress=='w') player1.strafeUp();
-        if(keypress=='a') player1.strafeLeft();
-        if(keypress=='s') player1.strafeDown();
-        if(keypress=='d') player1.strafeRight();
+        if(keypress=='w') {player1.strafeUp(); }
+        if(keypress=='a') {player1.strafeLeft(); }
+        if(keypress=='s') {player1.strafeDown(); }
+        if(keypress=='d') {player1.strafeRight(); }
         //cout<<"K"<<keypress<<endl;
     }
 
@@ -63,7 +65,7 @@ int main()
 void mouseEventInGame(int event, int x, int y, int flags, void *param)
 {
     using namespace cv;
-    gridGraphics *cellptr = (gridGraphics*) param;
+    gameGraphics *cellptr = (gameGraphics*) param;
 
     if((event==EVENT_LBUTTONDOWN) || ((event==EVENT_MOUSEMOVE)&&(flags==EVENT_FLAG_LBUTTON)) )
     {
@@ -71,6 +73,12 @@ void mouseEventInGame(int event, int x, int y, int flags, void *param)
         cellptr->fillCell(0,0,255);
     }
 
+    if(event == cv::EVENT_MOUSEMOVE)
+    {
+        //cellptr->drawPoint(0,255,255, cellptr->toDeCartes(cellptr->pixToGrid(y,x)));
+        //cellptr->fillCell(0,255,255);
+        player1.setPosition(cellptr->toDeCartes(cellptr->pixToGrid(y,x)));
+    }
 
     if((event==EVENT_RBUTTONDOWN) || ((event==EVENT_MOUSEMOVE)&&(flags==EVENT_FLAG_RBUTTON)))
     {

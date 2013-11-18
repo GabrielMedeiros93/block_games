@@ -82,6 +82,11 @@ int player::getSize()
     return sizeOfObject;
 }
 
+int player::turnRight()
+{
+
+}
+
 int player::strafeUp()
 {
     position.y +=1;
